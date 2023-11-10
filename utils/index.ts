@@ -26,7 +26,6 @@ export async function fetchcars(filters:FilterProps) {
     const response = await fetch(`https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&model=${model}&year=${year}&limit=${limit}&fuel_type=${fuel}`,{
             headers:headers,
     });
-
     const result = await response.json();
     // console.log(result);
     return result;

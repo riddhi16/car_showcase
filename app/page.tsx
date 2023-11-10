@@ -7,8 +7,13 @@ import { CustomFilter } from "@/components/index";
 import { fetchcars } from "@/utils";
 import { fuels, yearsOfProduction } from "@/constants";
 import ShowMore from "@/components/ShowMore";
+import { FilterProps } from "@/types";
 
-export default async function Home({ searchParams }) {
+interface HomeProps {
+  searchParams: FilterProps;
+}
+
+export default async function Home({ searchParams }: HomeProps) {
   const allCars = await fetchcars({
     manufacturer: searchParams.manufacturer || "",
     model: searchParams.model || "",
